@@ -1,0 +1,37 @@
+<%- include('component/header') %>
+
+  <body>
+
+    <div class="container pt-3" id="card">
+      <%- include('component/navbar') %>
+        
+          <% if ( notes.length ) { %>
+            <ul>
+              <% notes.forEach((el)=>{ %>
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <%= el.title %>
+                </h5>
+                <p class="card-text">
+                  <%= el.content %>
+                </p>
+                <a class="card-text m-3 note" id= "<%= el._id %>">Показати більше</a>
+              </div>
+            </div>
+          <% }) %>
+          </ul>
+            <% } else { %>
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h5 class="card-title"> Нотатки відсутні </h5>
+                </div>
+              </div>
+              <% } %>
+        
+        
+    </div>
+    <script src="cardList.js"></script>
+  </body>
+
+  </html>
