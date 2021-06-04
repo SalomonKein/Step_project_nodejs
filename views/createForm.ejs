@@ -1,11 +1,11 @@
 <%- include('component/header') %>
 
-<body>
-  
+  <body>
+
     <div class="container pt-3" id="form">
-      <%- include('component/navbar') %> 
+      <%- include('component/navbar') %>
         <h1>Heavy Metall does`nt rust</h1>
-      
+
         <form class="form-inline mb-3" action='/createForm' method="POST">
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Назва нотатки</label>
@@ -16,8 +16,9 @@
             <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
           <button class="btn btn-primary mt-3" type="submit" id="create">Створити</button>
-        </form>      
-        </div>
-        <script src="createForm.js"></script>
-</body>
-</html>
+        </form>
+    </div>
+    <script src="createForm.js"></script>
+  </body>
+
+  </html>

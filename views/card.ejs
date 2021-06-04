@@ -1,20 +1,30 @@
+<%- include('component/header') %>
 
-<%- include('component/header') %>  
 
-
-<body>
-     
-    <div class="container pt-3" id="card">
-        <%- include('component/navbar') %>
-          <div class="card mb-3">
-            <div class="card-body">
-              <h5 class="card-title">   curentNote.title  </h5>
-              <p class="card-text">  curentNote.content   </p>
-              <button class="btn btn-primary m-3" >Редагувати</button>
-              <button class="btn btn-danger m-3">Видалити</button>
-            </div>
+  <body>
+    <div class="container pt-3">
+      <%- include('component/navbar') %>
+        <form class="form-inline mb-3 note" action='/createForm' method="PUT" id="<%= curentNote._id %>">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">
+              <%= curentNote.title %>
+            </label>
+            <input type="text" name="title" class="form-control" id="exampleFormControlInput1"
+              placeholder="<%= curentNote.title %>">
           </div>
-</div>
-<script src="card.js"></script>
-</body>
-</html>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Текст нотатки</label>
+            <textarea class="form-control" name="content" id="exampleFormControlTextarea1"
+              rows="3"><%= curentNote.content %></textarea>
+          </div>
+          <button class="btn btn-primary m-3 edit">Редагувати</button>
+          <button class="btn btn-danger m-3 delete">Видалити</button>
+        </form>
+
+    </div>
+
+    </div>
+    <script src="card.js"></script>
+  </body>
+
+  </html>
