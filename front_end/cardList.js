@@ -7,7 +7,7 @@ card.onclick = function (event) {
   }
 
   let id = event.target.id;
-  sendRequest("/cardList", "POST", {id})
+  sendRequest("/cardlist", "POST", {id})
     .then((data) => (window.location = data))
     .catch((err) => console.log(err));
 };
