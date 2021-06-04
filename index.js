@@ -13,8 +13,8 @@ app.use(express.urlencoded({extended: true}));
 
 app.set("view engine", "ejs");
 
-app.get("/api/url", (req, res) => {
-  res.status(200).json("/cardlist");
+app.get("/", (req, res) => {
+  res.redirect("/cardlist");
 });
 
 app.use(express.static(path.resolve(__dirname, "front_end")));
